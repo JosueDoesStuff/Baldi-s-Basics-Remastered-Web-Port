@@ -1,24 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <meta name="theme-color" content="#ff0000"> <!-- Initial status bar color -->
     <title>Unity WebGL Player | BALDI</title>
     <style>
       body {
         margin: 0;
         padding: 0;
         text-align: center;
-        overflow: hidden; /* Prevent scrollbars */
+        overflow: hidden;
+        background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Rainbow gradient */
       }
       canvas {
-        display: block; /* Removes small spaces around canvas */
+        display: block;
         position: fixed;
         top: 0;
         left: 0;
@@ -51,6 +52,17 @@
         productName: "BALDI",
         productVersion: "1.4.4",
       });
+
+      // Dynamic rainbow effect for the status bar
+      let colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3']; // Rainbow colors
+      let i = 0;
+
+      function changeStatusBarColor() {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', colors[i]);
+        i = (i + 1) % colors.length;
+      }
+
+      setInterval(changeStatusBarColor, 1000); // Change color every second
     </script>
   </body>
 </html>

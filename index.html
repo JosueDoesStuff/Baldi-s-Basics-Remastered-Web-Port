@@ -52,40 +52,5 @@
         productVersion: "1.4.4",
       });
     </script>
-
-    let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  console.log('Install prompt event captured!'); // Debug message
-  showInstallPromotion();
-});
-
-const buttonInstall = document.getElementById('installButton');
-buttonInstall.addEventListener('click', () => {
-  hideMyInstallPromotion();
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the install prompt');
-      } else {
-        console.log('User dismissed the install prompt');
-      }
-      deferredPrompt = null;
-    });
-  }
-});
-
-function showInstallPromotion() {
-  console.log('Show install promotion');
-}
-
-function hideMyInstallPromotion() {
-  console.log('Hide install promotion');
-}
-
-    <script src="app.js"></script>
   </body>
 </html>

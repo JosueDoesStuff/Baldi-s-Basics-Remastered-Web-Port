@@ -53,17 +53,8 @@
         productVersion: "1.4.4",
       });
 
-      // Expanded rainbow colors with brighter and darker variations
-      let colors = [
-        '#ff0000', '#ff4d4d', '#b30000', // Red variations (bright to dark)
-        '#ff7f00', '#ffbf80', '#cc6600', // Orange variations
-        '#ffff00', '#ffff66', '#cccc00', // Yellow variations
-        '#00ff00', '#66ff66', '#009900', // Green variations
-        '#0000ff', '#6666ff', '#000066', // Blue variations
-        '#4b0082', '#8a2be2', '#2e0063', // Indigo variations
-        '#9400d3', '#da70d6', '#6a0dad'  // Violet variations
-      ];
-      
+      // Dynamic rainbow effect for the status bar
+      let colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3']; // Rainbow colors
       let i = 0;
 
       function changeStatusBarColor() {
